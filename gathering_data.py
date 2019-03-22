@@ -71,3 +71,28 @@ with open('tweet_json.txt', 'w') as outfile:
 end = timer()
 print(end - start)
 print(fails_dict)
+
+# As each line has information about a specific id,retweet count
+# and favorite count so expanding the text file into different lines and storing them as a list
+
+lines=[]
+with open('tweet_json.txt','rt') as file:
+    for line in file:
+        lines.append(line)
+
+# Now converting the list into a table in pandas with extracting tweet id,retweet count
+# and favorite count from each line
+
+f=[]
+for line in lines:
+    g=[]
+    k=line.find('id_str')
+    s=line[k+10:k+28]
+    g.append(s)
+    k=line.find("retweet_count")
+    s=line[k+16:k+20]
+    g.append(s)
+    k=line.find('favorite_count')
+    s=line[k+17:k+22]
+    g.append(s)
+    f.append(g)
