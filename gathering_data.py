@@ -96,3 +96,7 @@ for line in lines:
     s=line[k+17:k+22]
     g.append(s)
     f.append(g)
+
+#Converting the table to a DataFrame in pandas.
+
+df2=pd.DataFrame(f,columns=['tweet_id','retweet_count','favorite_count'])
