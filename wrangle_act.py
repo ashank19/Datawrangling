@@ -156,4 +156,15 @@ for i in range(len(api_data_clean)):
 
 api_data_clean['favorite_count']
 
-        
+# Define
+
+# Erroneous datatype of count columns, count column should be of integer type.
+
+# Code
+
+api_data_clean['retweet_count']=api_data_clean['retweet_count'].astype(int)
+api_data_clean['favorite_count']=api_data_clean['favorite_count'].astype(int)
+
+# Test
+
+api_data_clean.info()
