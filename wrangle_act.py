@@ -141,5 +141,19 @@ for i in range(len(api_data_clean)):
 
 api_data_clean['retweet_count']
 
+# Define:
+
+# Favorite count column should only contain integers and no characters.
+
+# Code
+
+for i in range(len(api_data_clean)):
+    if((',') in (api_data_clean.loc[i,'favorite_count'])):
+        k=api_data_clean.loc[i,'favorite_count'].index(',')
+        api_data_clean.loc[i,'favorite_count']=api_data_clean.loc[i,'favorite_count'][:-(len(api_data_clean.loc[i,'favorite_count'])-k)]
+
+# Test
+
+api_data_clean['favorite_count']
 
         
