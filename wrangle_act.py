@@ -168,3 +168,15 @@ api_data_clean['favorite_count']=api_data_clean['favorite_count'].astype(int)
 # Test
 
 api_data_clean.info()
+
+# Define
+
+# Tweet id column should be of str type.in archive table.
+
+# Code
+
+twitter_archive_clean['tweet_id']=twitter_archive_clean['tweet_id'].astype(str)
+
+#Test
+
+twitter_archive_clean.info()
